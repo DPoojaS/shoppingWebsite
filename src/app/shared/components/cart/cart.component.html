@@ -1,0 +1,26 @@
+
+  
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let prod of productsArray">
+            <mat-card class="example-card mt-4 p-4" >
+                <mat-card-header>
+                   
+                  <mat-card-title><h5>{{prod.name}}</h5></mat-card-title>           
+                </mat-card-header> <hr>
+                <mat-card-content>
+                  <p><strong>Catagory : </strong>{{prod.category}}</p>
+                  <p><strong>Quantity : </strong>{{prod.quantity}}</p>
+                  <p><strong>Price : </strong>{{prod.price}}</p>
+                  
+                </mat-card-content>
+                <mat-card-actions >
+    
+                    <button mat-raised-button color="accent" >Edit</button>
+                    <button mat-raised-button color="accent" >Delete</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</div>
+{{productsArray | json}}

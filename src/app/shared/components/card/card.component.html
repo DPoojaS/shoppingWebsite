@@ -1,0 +1,32 @@
+
+
+
+  <div class="demo mt-5 align-items-center d-flex ">
+    <button mat-raised-button color="accent" *ngIf="getRoleOfUser === 'Admin'" routerLink="/productform" [queryParams]="{canEdit}">
+        Add Products
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let prod of productsArray">
+        <mat-card class="example-card mt-4 p-4" >
+            <mat-card-header>
+               
+              <mat-card-title><h5>{{prod.name}}</h5></mat-card-title>           
+            </mat-card-header> <hr>
+            <mat-card-content>
+              <p><strong>Catagory : </strong>{{prod.category}}</p>
+              <p><strong>Quantity : </strong>{{prod.quantity}}</p>
+              <p><strong>Price : </strong>{{prod.price}}</p>
+              
+            </mat-card-content>
+            <mat-card-actions >
+                <!-- <button mat-raised-button color="accent" *ngIf="getRoleOfUser === 'User'"  (click)="onaddCard(prod.id)" [routerLink]="['/cart', prod.id]" >Add to Cart</button> -->
+                <button mat-raised-button color="accent" *ngIf="getRoleOfUser === 'User'"  (click)="onaddCard(prod.id)" >Add to Cart</button>
+                <!-- <button mat-raised-button color="accent" *ngIf="getRoleOfUser  === 'User'">Update</button> -->
+                <button mat-raised-button color="accent" *ngIf="getRoleOfUser === 'Admin'" (click)="onEditCard(prod.id)" [routerLink]="['/productform', prod.id]"> Edit</button>
+
+                <button mat-raised-button color="accent" *ngIf="getRoleOfUser  === 'Admin'" (click)="onDeleteCart(prod.id)"  >Delete</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>

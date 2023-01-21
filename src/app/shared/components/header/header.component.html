@@ -1,0 +1,33 @@
+<header>
+    <div class="navbar navbar-dark text-white bg-primary shadow-sm p-4">
+      <div class="container-fluid">
+        <div class="navbar-bard align-item-center d-flex">
+            <i style="font-size : 40px" class="fas fa-shipping-fast">&nbsp;           
+            </i>
+            <strong style="font-size : 30px">Flipcart</strong>
+            <div class="form-group">
+                <input type="text" value="Search Product" class="form-control">
+            </div>
+            <span>
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
+        <button class="btn btn-md text-primary bg-white"  routerLink="/">
+           Home
+        </button>
+
+        <button class="btn btn-md text-primary bg-white" routerLink="/cart">
+            View Cart
+         </button>
+         <button class="btn btn-md text-primary bg-white" routerLink="/login">
+            Log In
+        </button>
+        <button class="btn btn-primary   ">
+            <i  style="font-size : 30px" class="fas fa-cart-plus"></i>
+            <div style="font-size : 10px" class="badge bg-danger">
+                {{count}}
+            </div>
+        </button>
+      </div>
+    </div>
+</header>

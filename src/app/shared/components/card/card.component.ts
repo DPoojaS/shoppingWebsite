@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   getRoleOfUser!: string | null;
   canEdit : number = 0;
   count : number = 1;
+  error : string = '';
   constructor(private prodService : ProductService) { }
 
   ngOnInit(): void {
@@ -21,12 +22,30 @@ export class CardComponent implements OnInit {
   }
 
   getAllproducts(){
-    this.prodService.fetchAllProucts().subscribe(res =>{
-      // console.log(res);
+    this.prodService.fetchAllProucts().subscribe((res) =>{
+      console.log(res);
       // this.productsArray.push(res)
-      this.productsArray = res
+      // console.log(res.status);
+      // if(typeof res === 'string'){
+      //   this.error = res
+        
+      // }else{
+      //   this.productsArray = res 
+      // }
+  
+      // if(!this.productsArray.length){
+      //   this.error = res
+        
+      // }else{
+      //   this.productsArray = res 
+      // }
+  
+     this.productsArray = res  
+      console.log(this.productsArray.length);
+    //   this.error = error
     })
   }
+
   onaddCard(id: number){
     // console.log( this.productsArray);
     this.newproductArr =   this.productsArray.find(ele => ele.id == id);

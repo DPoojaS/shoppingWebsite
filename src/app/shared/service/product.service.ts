@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { catchError, Observable, retry, Subject, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Iproduct } from '../model/product';
 
@@ -16,7 +16,24 @@ export class ProductService {
 
   fetchAllProucts():Observable<Iproduct[]>{
     return this.http.get<Iproduct[]>(this.productsUrl)
+    .pipe(retry(1), catchError(this.handleError))
   }
+  handleError(error :any){
+    let errMsg = '';
+    if(error.error instanceof ErrorEvent){
+      errMsg = `Error : ${error.error.message}`
+    }else{
+      errMsg = `Error code : ${error.status}\nMessage : ${error.message}`;
+    }
+    console.log(errMsg);
+    return throwError(()=>{
+      return errMsg;
+    })
+  }
+
+
+
+
 
   getSingleProduct(id : number):Observable<Iproduct>{
     let singleProductUrl = `${this.productsUrl}/${id}`

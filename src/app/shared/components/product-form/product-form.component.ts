@@ -24,7 +24,8 @@ export class ProductFormComponent implements OnInit {
     .subscribe((params : Params) =>{
       
       let getId = params['id'];    
-      localStorage.setItem('setId', '' + getId)
+      localStorage.setItem('setId', '' + getId);
+      
       console.log(getId);
       this.productService.getSingleProduct(getId).subscribe(res =>{
         this.productsForm.setValue({

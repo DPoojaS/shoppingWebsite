@@ -30,7 +30,6 @@ export class CartComponent implements OnInit {
    this.prodService.productSub.subscribe(res =>{
       console.log(res);
             // this.productsArray = res
-
             // this.productsArray.push(res)
             this.productsArray = [...this.productsArray, res]
             console.log(this.productsArray)

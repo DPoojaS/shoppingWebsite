@@ -17,4 +17,7 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  onserch(event : Event){
+    console.log((event.target as HTMLInputElement).value);    
+  }
 }

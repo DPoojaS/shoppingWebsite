@@ -6,7 +6,7 @@
         Add Products
     </button>
   </div>
-  <div class="row">
+  <div class="row ">
     <div class="col-md-4" *ngFor="let prod of productsArray">
         <mat-card class="example-card mt-4 p-4" >
             <mat-card-header>
@@ -28,5 +28,12 @@
                 <button mat-raised-button color="accent" *ngIf="getRoleOfUser  === 'Admin'" (click)="onDeleteCart(prod.id)"  >Delete</button>
             </mat-card-actions>
           </mat-card>
+    </div>
+
+    <div class="col-md-12" *ngIf="!productsArray.length ">
+      <p class="alert alert-danger">
+        <!-- {{error}} -->
+        show the error
+      </p>
     </div>
 </div>

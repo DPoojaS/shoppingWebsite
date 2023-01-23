@@ -15,13 +15,6 @@
       "category": "Clothing"
     },
     {
-      "id": 103,
-      "name": "Jeans",
-      "price": 899,
-      "quantity": 3,
-      "category": "Clothing"
-    },
-    {
       "id": 104,
       "name": "Sarees",
       "price": 1499,
@@ -174,6 +167,13 @@
       "price": 399,
       "quantity": "5",
       "id": 413
+    },
+    {
+      "name": null,
+      "category": null,
+      "price": null,
+      "quantity": null,
+      "id": 414
     }
   ],
   "comments": [

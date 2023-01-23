@@ -16,11 +16,10 @@
                 </mat-card-content>
                 <mat-card-actions >
     
-                    <button mat-raised-button color="accent" >Edit</button>
-                    <button mat-raised-button color="accent" >Delete</button>
+                    <!-- <button mat-raised-button color="accent" >Edit</button> -->
+                    <button mat-raised-button color="accent" (click)="onDelete(prod.id)" >LogOut</button>
                 </mat-card-actions>
               </mat-card>
         </div>
     </div>
 </div>
-{{productsArray | json}}

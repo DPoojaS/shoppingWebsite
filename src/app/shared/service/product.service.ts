@@ -9,7 +9,8 @@ import { Iproduct } from '../model/product';
 })
 export class ProductService {
   productsUrl : string = `${environment.baseUrl}`;
-  arrayProduct: any[] = []
+  arrayProduct: any[] = [];
+  ViewCartArray: Iproduct[] = [];
   productSub : Subject<Iproduct> = new Subject();
   countSub : Subject<number> = new Subject();
   constructor(private http : HttpClient) { }

@@ -50,10 +50,11 @@ export class CardComponent implements OnInit {
     // console.log( this.productsArray);
     this.newproductArr =   this.productsArray.find(ele => ele.id == id);
     // console.log(this.newproductArr);
-    this.prodService.productSub.next(this.newproductArr!);
-    this.prodService.countSub.next( this.count++)
+    // this.prodService.productSub.next(this.newproductArr!);
+    // this.prodService.countSub.next( this.count++)
 
-
+    this.prodService.ViewCartArray.push(this.newproductArr!)
+    localStorage.setItem('setProduct', JSON.stringify(this.prodService.ViewCartArray))
   }
   onEditCard(id: number){
     console.log(id);
